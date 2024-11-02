@@ -1,6 +1,6 @@
-FROM node:18-alpine3.19 as builder
-WORKDIR /app
-COPY package.json package.json .
+FROM node:lts-alpine as builder
+WORKDIR '/app'
+COPY package.json .
 RUN npm install
 COPY . .
 RUN npm run build
